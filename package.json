@@ -1,4 +1,5 @@
 {
+  "name": "pop-balloons-bcard",
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
@@ -8,6 +9,8 @@
     "sass": "^1.26.9"
   },
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url /pop-balloons-bcard",
+    "deploy": "gh-pages -d dist"
   }
 }
