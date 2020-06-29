@@ -1,0 +1,25 @@
+.balloons {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: url($imgLink + 'start.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s ease-in-out;
+}
+
+.balloon {
+    position: absolute;
+    cursor: pointer;
+    width: 120px;
+    height: 130px;
+    border-radius: 85%;
+    box-shadow: inset -25px 0px 0 $transparentGrey;
+    transition: .5s ease-in;
+}
+
+
+svg {
+    pointer-events: none;
+}

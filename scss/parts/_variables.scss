@@ -1,0 +1,8 @@
+
+$imgLink: '../img/';
+$font_base: 'Bubblegum Sans', cursive;
+
+@mixin size($h: 100%, $w: 100%) {    
+    height: $h;
+    width: $w;
+}

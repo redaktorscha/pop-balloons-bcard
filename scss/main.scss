@@ -1,0 +1,12 @@
+@import './parts/reset';
+@import './parts/colors';
+@import './parts/variables';
+@import './parts/card';
+@import './parts/baloons';
+@import './parts/wish';
+
+
+body {
+    display: flex;
+    margin: 0 auto;
+}
