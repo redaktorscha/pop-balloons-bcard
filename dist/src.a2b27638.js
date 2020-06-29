@@ -117,18 +117,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/index.js":[function(require,module,exports) {
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+})({"src/Decor.js":[function(require,module,exports) {
+"use strict";
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -138,14 +133,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var startSettings = {
-  speed: 120,
-  balloonsQuantity: 4
-};
-
-var Decor =
-/*#__PURE__*/
-function () {
+var Decor = /*#__PURE__*/function () {
   function Decor() {
     _classCallCheck(this, Decor);
   }
@@ -155,8 +143,8 @@ function () {
     value: function create(div) {
       div.id = this.prefix + this.id;
       div.classList.add(this.class);
-      div.style.left = this.coords.x + "px";
-      div.style.top = this.coords.y + "px";
+      div.style.left = this.coords.x + 'px';
+      div.style.top = this.coords.y + 'px';
       div.innerHTML = this.inner;
       div.style.color = this.color;
       return div;
@@ -166,29 +154,62 @@ function () {
   return Decor;
 }();
 
+exports.default = Decor;
+
 _defineProperty(Decor, "getRandInt", function (min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 });
+},{}],"src/Balloon.js":[function(require,module,exports) {
+"use strict";
 
-var Balloon =
-/*#__PURE__*/
-function (_Decor) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Decor2 = _interopRequireDefault(require("./Decor"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Balloon = /*#__PURE__*/function (_Decor) {
   _inherits(Balloon, _Decor);
+
+  var _super = _createSuper(Balloon);
 
   function Balloon(q, parentOffsetWidth, parentOffsetHeight) {
     var _this;
 
     _classCallCheck(this, Balloon);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Balloon).call(this));
+    _this = _super.call(this);
 
-    _defineProperty(_assertThisInitialized(_this), "colors", ["#F787BB", "#5FA1E4", "#F32566", "#BDFFC2", "#B59FF7", "#FAFE03", "#A328CD", "#2A59F7"]);
+    _defineProperty(_assertThisInitialized(_this), "colors", ['#F787BB', '#5FA1E4', '#F32566', '#BDFFC2', '#B59FF7', '#FAFE03', '#A328CD', '#2A59F7']);
 
     _this.color = _this.colors[Balloon.getRandInt(0, _this.colors.length)];
     _this.id = q;
-    _this.prefix = "bal";
-    _this.class = "balloon";
-    _this.inner = "<svg version=\"1.0\" xmlns=\"http://www.w3.org/2000/svg\" width=\"90pt\" height=\"100pt\" viewBox=\"0 0 950.000000 1280.000000\" preserveAspectRatio=\"xMidYMid meet\">          \n          <g id=\"".concat(_this.id, "\" transform=\"translate(0.000000,1280.000000) scale(0.100000,-0.100000)\" fill=\"").concat(_this.color, "\" stroke=\"#000000\">\n            <path d=\"M4430 12789 c-921 -59 -1769 -370 -2480 -908 -1067 -807 -1758 -2084\n-1914 -3536 -69 -641 -34 -1378 100 -2105 192 -1039 624 -2084 1222 -2955 536\n-781 1225 -1439 1919 -1834 140 -79 424 -214 558 -264 215 -80 439 -136 648\n-162 60 -7 111 -16 115 -19 8 -9 -15 -237 -34 -326 -35 -167 -134 -411 -198\n-487 -33 -40 -33 -73 2 -105 59 -57 173 -82 372 -83 213 0 331 25 393 83 36\n34 34 62 -7 116 -114 150 -225 522 -226 758 0 54 -15 47 150 68 889 116 1919\n814 2751 1865 480 607 892 1332 1182 2085 466 1210 624 2521 441 3659 -214\n1337 -881 2491 -1874 3242 -876 663 -1971 982 -3120 908z\" />\n          </g>\n        </svg>");
+    _this.prefix = 'bal';
+    _this.class = 'balloon';
+    _this.inner = "<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='90pt' height='100pt' viewBox='0 0 950.000000 1280.000000' preserveAspectRatio='xMidYMid meet'>          \n          <g id='".concat(_this.id, "' transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)' fill='").concat(_this.color, "' stroke='#000000'>\n            <path d='M4430 12789 c-921 -59 -1769 -370 -2480 -908 -1067 -807 -1758 -2084\n-1914 -3536 -69 -641 -34 -1378 100 -2105 192 -1039 624 -2084 1222 -2955 536\n-781 1225 -1439 1919 -1834 140 -79 424 -214 558 -264 215 -80 439 -136 648\n-162 60 -7 111 -16 115 -19 8 -9 -15 -237 -34 -326 -35 -167 -134 -411 -198\n-487 -33 -40 -33 -73 2 -105 59 -57 173 -82 372 -83 213 0 331 25 393 83 36\n34 34 62 -7 116 -114 150 -225 522 -226 758 0 54 -15 47 150 68 889 116 1919\n814 2751 1865 480 607 892 1332 1182 2085 466 1210 624 2521 441 3659 -214\n1337 -881 2491 -1874 3242 -876 663 -1971 982 -3120 908z' />\n          </g>\n        </svg>");
     _this.width = 90;
     _this.coords = {
       x: Balloon.getRandInt(-(_this.width / 2), parentOffsetWidth - _this.width),
@@ -198,40 +219,28 @@ function (_Decor) {
   }
 
   return Balloon;
-}(Decor);
+}(_Decor2.default);
 
-var Wish =
-/*#__PURE__*/
-function (_Decor2) {
-  _inherits(Wish, _Decor2);
+exports.default = Balloon;
+},{"./Decor":"src/Decor.js"}],"src/BalloonsLoader.js":[function(require,module,exports) {
+"use strict";
 
-  function Wish(leftCoord, topCoord, color, id) {
-    var _this2;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-    _classCallCheck(this, Wish);
+var _Balloon = _interopRequireDefault(require("./Balloon"));
 
-    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(Wish).call(this));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    _defineProperty(_assertThisInitialized(_this2), "wishes", ["&#9829;", "&#9752;", "&#127800;", "&#9775;", "&#128062;", "&#127799;", "&#128568;", "&#129392;", "&#129321;", "&#129321;", "&#129412;", "&#129434;", "&#128330;", "&#129419;", "&#129417;", "&#127853;", "&#9883;", "&#8986;", "&#8987;", "&#128241;", "&#9749;", "&#9997;", "&#9999;", "&#9993;", "&#128150;", "&#128156;", "&#10052;", "&#127802;", "&#127804;", "&#127803;", "&#127799;", "&#9730;", "&#9728;", "&#127769;", "&#127828;", "&#127827;", "&#127839;", "&#127852;", "&#127851;", "&#127850;", "&#127849;", "&#127917;", "&#127905;", "&#127912;", "&#127926;", "&#127942;", "&#128690;", "&#128091;", "&#9733;", "&#10032;", "&#128092;", "&#128089;", "&#128082;", "&#128087;", "&#127843;", "&#127848;", "&#127856;", "&#127849;", "&#36;", "&#8364;"]);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    _this2.prefix = "wish";
-    _this2.id = id;
-    _this2.class = "wish";
-    _this2.color = color;
-    _this2.coords = {
-      x: leftCoord,
-      y: topCoord
-    };
-    _this2.inner = _this2.wishes[Wish.getRandInt(0, _this2.wishes.length)];
-    return _this2;
-  }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  return Wish;
-}(Decor);
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var BalloonsLoader =
-/*#__PURE__*/
-function () {
+var BalloonsLoader = /*#__PURE__*/function () {
   function BalloonsLoader(cardWrapper) {
     _classCallCheck(this, BalloonsLoader);
 
@@ -241,7 +250,7 @@ function () {
   _createClass(BalloonsLoader, [{
     key: "generateBalloon",
     value: function generateBalloon(index) {
-      var balloon = new Balloon(index, this.cardWrapper.offsetWidth, this.cardWrapper.offsetHeight).create(document.createElement("div"));
+      var balloon = new _Balloon.default(index, this.cardWrapper.offsetWidth, this.cardWrapper.offsetHeight).create(document.createElement('div'));
       this.cardWrapper.append(balloon);
     }
   }, {
@@ -256,9 +265,90 @@ function () {
   return BalloonsLoader;
 }();
 
-var Card =
-/*#__PURE__*/
-function () {
+exports.default = BalloonsLoader;
+},{"./Balloon":"src/Balloon.js"}],"src/Wish.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Decor2 = _interopRequireDefault(require("./Decor"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Wish = /*#__PURE__*/function (_Decor) {
+  _inherits(Wish, _Decor);
+
+  var _super = _createSuper(Wish);
+
+  function Wish(leftCoord, topCoord, color, id) {
+    var _this;
+
+    _classCallCheck(this, Wish);
+
+    _this = _super.call(this);
+
+    _defineProperty(_assertThisInitialized(_this), "wishes", ['&#9829;', '&#9752;', '&#127800;', '&#9775;', '&#128062;', '&#127799;', '&#128568;', '&#129392;', '&#129321;', '&#129321;', '&#129412;', '&#129434;', '&#128330;', '&#129419;', '&#129417;', '&#127853;', '&#9883;', '&#8986;', '&#8987;', '&#128241;', '&#9749;', '&#9997;', '&#9999;', '&#9993;', '&#128150;', '&#128156;', '&#10052;', '&#127802;', '&#127804;', '&#127803;', '&#127799;', '&#9730;', '&#9728;', '&#127769;', '&#127828;', '&#127827;', '&#127839;', '&#127852;', '&#127851;', '&#127850;', '&#127849;', '&#127917;', '&#127905;', '&#127912;', '&#127926;', '&#127942;', '&#128690;', '&#128091;', '&#9733;', '&#10032;', '&#128092;', '&#128089;', '&#128082;', '&#128087;', '&#127843;', '&#127848;', '&#127856;', '&#127849;', '&#36;', '&#8364;']);
+
+    _this.prefix = 'wish';
+    _this.id = id;
+    _this.class = 'wish';
+    _this.color = color;
+    _this.coords = {
+      x: leftCoord,
+      y: topCoord
+    };
+    _this.inner = _this.wishes[Wish.getRandInt(0, _this.wishes.length)];
+    return _this;
+  }
+
+  return Wish;
+}(_Decor2.default);
+
+exports.default = Wish;
+},{"./Decor":"src/Decor.js"}],"src/Card.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _BalloonsLoader = _interopRequireDefault(require("./BalloonsLoader"));
+
+var _Wish = _interopRequireDefault(require("./Wish"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Card = /*#__PURE__*/function () {
   function Card(cardWrapper, startScreen, btnStart, btnText, _ref) {
     var speed = _ref.speed,
         balloonsQuantity = _ref.balloonsQuantity;
@@ -269,7 +359,7 @@ function () {
     this.startScreen = startScreen;
     this.btnStart = btnStart;
     this.btnText = btnText;
-    this.balloonsLoader = new BalloonsLoader(this.cardWrapper);
+    this.balloonsLoader = new _BalloonsLoader.default(this.cardWrapper);
     this.speed = speed;
     this.balloonsQuantity = balloonsQuantity;
   }
@@ -277,30 +367,30 @@ function () {
   _createClass(Card, [{
     key: "start",
     value: function start() {
-      var _this3 = this;
+      var _this = this;
 
       this.balloonsLoader.loadBalloons(this.balloonsQuantity);
-      this.startScreen.style.display = "none";
+      this.startScreen.style.display = 'none';
       this.btnText.innerHTML = "Pop balloons<br>to get Bday wishes!";
-      this.btnStart.classList.remove("bcard__bottom-start");
-      this.cardWrapper.addEventListener("click", function (e) {
-        return _this3.popBalloons(e.target.id);
+      this.btnStart.classList.remove('bcard__bottom-start');
+      this.cardWrapper.addEventListener('click', function (e) {
+        return _this.popBalloons(e.target.id);
       });
       requestAnimationFrame(this.moveBalloons.bind(this));
     }
   }, {
     key: "moveBalloons",
     value: function moveBalloons() {
-      var _this4 = this;
+      var _this2 = this;
 
-      var balloons = document.querySelectorAll(".balloon");
+      var balloons = document.querySelectorAll('.balloon');
       balloons.forEach(function (balloon) {
         var y = balloon.offsetTop;
-        y -= _this4.speed;
-        balloon.style.top = y + "px";
+        y -= _this2.speed;
+        balloon.style.top = y + 'px';
 
         if (y <= -200) {
-          _this4.balloonsLoader.generateBalloon(balloon.id.slice(3));
+          _this2.balloonsLoader.generateBalloon(balloon.id.slice(3));
 
           balloon.remove();
         }
@@ -318,7 +408,7 @@ function () {
       var targetBalloonColor = targetBalloon.style.color;
       var x = targetBalloon.offsetLeft;
       var y = targetBalloon.offsetTop;
-      var wish = new Wish(x, y, targetBalloonColor, id.slice(3)).create(document.createElement('div'));
+      var wish = new _Wish.default(x, y, targetBalloonColor, id.slice(3)).create(document.createElement('div'));
       targetBalloon.remove();
       this.cardWrapper.append(wish);
       this.balloonsLoader.generateBalloon(id.slice(3));
@@ -331,11 +421,41 @@ function () {
   return Card;
 }();
 
+exports.default = Card;
+},{"./BalloonsLoader":"src/BalloonsLoader.js","./Wish":"src/Wish.js"}],"src/startSettings.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.startSettings = void 0;
+var startSettings = {
+  speed: 120,
+  balloonsQuantity: 4
+};
+exports.startSettings = startSettings;
+},{}],"src/index.js":[function(require,module,exports) {
+"use strict";
+
+var _Card = _interopRequireDefault(require("./Card"));
+
+var _Decor = _interopRequireDefault(require("./Decor"));
+
+var _Balloon = _interopRequireDefault(require("./Balloon"));
+
+var _BalloonsLoader = _interopRequireDefault(require("./BalloonsLoader"));
+
+var _Wish = _interopRequireDefault(require("./Wish"));
+
+var _startSettings = require("./startSettings");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 document.getElementById("start").addEventListener("click", function () {
-  var card = new Card(document.getElementById("bcont"), document.getElementById("balloons"), document.getElementById("start"), document.getElementById("txt"), startSettings);
+  var card = new _Card.default(document.getElementById("bcont"), document.getElementById("balloons"), document.getElementById("start"), document.getElementById("txt"), _startSettings.startSettings);
   card.start();
 });
-},{}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./Card":"src/Card.js","./Decor":"src/Decor.js","./Balloon":"src/Balloon.js","./BalloonsLoader":"src/BalloonsLoader.js","./Wish":"src/Wish.js","./startSettings":"src/startSettings.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -363,7 +483,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40751" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36225" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -539,5 +659,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js","src/index.js"], null)
+},{}]},{},["node_modules/parcel/src/builtins/hmr-runtime.js","src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map

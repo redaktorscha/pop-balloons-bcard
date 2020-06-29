@@ -1,5 +1,5 @@
-import { BalloonsLoader } from './BalloonsLoader';
-import { Wish } from './Wish';
+import BalloonsLoader from './BalloonsLoader';
+import Wish from './Wish';
 
 export default class Card {
   constructor(cardWrapper, startScreen, btnStart, btnText, {

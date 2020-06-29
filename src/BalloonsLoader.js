@@ -1,4 +1,4 @@
-import { Balloon } from './Balloon';
+import Balloon from './Balloon';
 
 export default class BalloonsLoader {
     constructor(cardWrapper) {

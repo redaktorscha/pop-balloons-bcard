@@ -1,4 +1,4 @@
-import { Decor } from './Decor';
+import Decor from './Decor';
 
 
 export default class Balloon extends Decor {
