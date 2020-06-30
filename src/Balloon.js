@@ -8,7 +8,9 @@ export default class Balloon extends Decor {
     this.id = q;
     this.prefix = 'bal';
     this.class = 'balloon';
-    this.inner = `<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='90pt' height='100pt' viewBox='0 0 950.000000 1280.000000' preserveAspectRatio='xMidYMid meet'>          
+    this.inner = `<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='90pt' height='100pt' viewBox='0 0 950.000000 1280.000000' preserveAspectRatio='xMidYMid meet'><metadata>
+    Created by potrace 1.15, written by Peter Selinger 2001-2017
+    </metadata>          
           <g id='${this.id}' transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)' fill='${this.color}' stroke='#000000'>
             <path d='M4430 12789 c-921 -59 -1769 -370 -2480 -908 -1067 -807 -1758 -2084
 -1914 -3536 -69 -641 -34 -1378 100 -2105 192 -1039 624 -2084 1222 -2955 536

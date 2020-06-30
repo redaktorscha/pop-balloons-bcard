@@ -209,7 +209,7 @@ var Balloon = /*#__PURE__*/function (_Decor) {
     _this.id = q;
     _this.prefix = 'bal';
     _this.class = 'balloon';
-    _this.inner = "<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='90pt' height='100pt' viewBox='0 0 950.000000 1280.000000' preserveAspectRatio='xMidYMid meet'>          \n          <g id='".concat(_this.id, "' transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)' fill='").concat(_this.color, "' stroke='#000000'>\n            <path d='M4430 12789 c-921 -59 -1769 -370 -2480 -908 -1067 -807 -1758 -2084\n-1914 -3536 -69 -641 -34 -1378 100 -2105 192 -1039 624 -2084 1222 -2955 536\n-781 1225 -1439 1919 -1834 140 -79 424 -214 558 -264 215 -80 439 -136 648\n-162 60 -7 111 -16 115 -19 8 -9 -15 -237 -34 -326 -35 -167 -134 -411 -198\n-487 -33 -40 -33 -73 2 -105 59 -57 173 -82 372 -83 213 0 331 25 393 83 36\n34 34 62 -7 116 -114 150 -225 522 -226 758 0 54 -15 47 150 68 889 116 1919\n814 2751 1865 480 607 892 1332 1182 2085 466 1210 624 2521 441 3659 -214\n1337 -881 2491 -1874 3242 -876 663 -1971 982 -3120 908z' />\n          </g>\n        </svg>");
+    _this.inner = "<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='90pt' height='100pt' viewBox='0 0 950.000000 1280.000000' preserveAspectRatio='xMidYMid meet'><metadata>\n    Created by potrace 1.15, written by Peter Selinger 2001-2017\n    </metadata>          \n          <g id='".concat(_this.id, "' transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)' fill='").concat(_this.color, "' stroke='#000000'>\n            <path d='M4430 12789 c-921 -59 -1769 -370 -2480 -908 -1067 -807 -1758 -2084\n-1914 -3536 -69 -641 -34 -1378 100 -2105 192 -1039 624 -2084 1222 -2955 536\n-781 1225 -1439 1919 -1834 140 -79 424 -214 558 -264 215 -80 439 -136 648\n-162 60 -7 111 -16 115 -19 8 -9 -15 -237 -34 -326 -35 -167 -134 -411 -198\n-487 -33 -40 -33 -73 2 -105 59 -57 173 -82 372 -83 213 0 331 25 393 83 36\n34 34 62 -7 116 -114 150 -225 522 -226 758 0 54 -15 47 150 68 889 116 1919\n814 2751 1865 480 607 892 1332 1182 2085 466 1210 624 2521 441 3659 -214\n1337 -881 2491 -1874 3242 -876 663 -1971 982 -3120 908z' />\n          </g>\n        </svg>");
     _this.width = 90;
     _this.coords = {
       x: Balloon.getRandInt(-(_this.width / 2), parentOffsetWidth - _this.width),
@@ -240,7 +240,9 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var BalloonsLoader = /*#__PURE__*/function () {
+var BalloonsLoader =
+/*#__PURE__*/
+function () {
   function BalloonsLoader(cardWrapper) {
     _classCallCheck(this, BalloonsLoader);
 
@@ -348,7 +350,9 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Card = /*#__PURE__*/function () {
+var Card =
+/*#__PURE__*/
+function () {
   function Card(cardWrapper, startScreen, btnStart, btnText, _ref) {
     var speed = _ref.speed,
         balloonsQuantity = _ref.balloonsQuantity;
@@ -483,7 +487,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36225" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36945" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
