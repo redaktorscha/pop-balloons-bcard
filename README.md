@@ -1,3 +1,3 @@
 # pop-balloons-bcard
 interactive birthday card for my friend
-(check it out)[https://redaktorscha.github.io/pop-balloons-bcard/]
+[GH Pages Link to play](https://redaktorscha.github.io/pop-balloons-bcard/)
